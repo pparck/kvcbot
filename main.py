@@ -1,10 +1,9 @@
 import discord
 from discord.ext import commands
 from discord.utils import get
+import os
 
 app = commands.Bot(command_prefix='+')
-
-token = "OTY5MjEzNDE3OTgwMzMwMDE1.YmqIVQ.hHEa7CXGQT3CQO12G3r9fpz5juo"
 
 calcResult = 0
 
@@ -215,5 +214,6 @@ async def Role(ctx, m1, member: discord.Member, m2):
     else:
         return None
 
-
-app.run(token)
+access_token = os.environ["token"]
+    
+app.run(access_token)
